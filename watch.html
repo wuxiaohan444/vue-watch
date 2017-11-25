@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="person.money">
+</div>
+<script>
+    var vm =new Vue({
+        el:'#app',
+        data:{
+            msg:'大家好',
+            person:{
+                name:"歇歇",
+                money:100000000
+            }
+        },
+        watch:{
+            person:{
+                handler:function (nv,ov) {
+                    console.log('你想干嘛');
+                },
+                deep:true,
+                immediate:true
+            }
+        }
+    })
+</script>
+</body>
+</html>
